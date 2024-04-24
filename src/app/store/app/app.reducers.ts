@@ -3,7 +3,7 @@ import { createReducer, on } from '@ngrx/store';
 import { setValue1, setValue2 } from './app.actions';
 
 const initialState = 0;
-const initialState2 = '';
+const initialState2 = '...';
 
 export const value1Reducer = createReducer(
   initialState,
