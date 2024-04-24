@@ -5,11 +5,15 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 
 import { routes } from './app.routes';
+import { value1Reducer, value2Reducer } from './store/app/app.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideStore(),
+    provideStore({
+      value1: value1Reducer,
+      value2: value2Reducer,
+    }),
     provideEffects(),
   ]
 };
