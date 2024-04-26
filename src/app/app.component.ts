@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { AppStore } from './app.store';
+import { selectValue1 } from './store/app/app.selectors';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
   value2$: Observable<string>;
 
   constructor(private store: Store<AppStore>) {
-    this.value1$ = store.select('value1');
+    this.value1$ = store.select(selectValue1);
     this.value2$ = store.select('value2');
   }
 }
