@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 
 import { AppStore } from './app.store';
 import { selectValue1 } from './store/app/app.selectors';
+import { addToValue1 } from './store/app/app.actions';
 
 @Component({
   selector: 'app-root',
@@ -25,5 +26,13 @@ export class AppComponent {
   constructor(private store: Store<AppStore>) {
     this.value1$ = store.select(selectValue1);
     this.value2$ = store.select('value2');
+  }
+
+  protected increment(): void {
+    this.store.dispatch(addToValue1({ value: 1 }));
+  }
+
+  protected decrement(): void {
+    this.store.dispatch(addToValue1({ value: -1 }));
   }
 }
