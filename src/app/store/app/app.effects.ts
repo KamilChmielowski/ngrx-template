@@ -17,7 +17,7 @@ export class AppEffects {
       ofType(setValue1, addToValue1),
       withLatestFrom(this.store.select(selectValue1)),
       tap(([action, value]) => {
-        alert(`You have update value1 by ${ action.value } to: ${ value }`);
+        alert(`Side effect: You have update value1 by ${ action.value } to: ${ value }`);
       }),
     )
   }, { dispatch: false });

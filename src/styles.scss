@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+$color: #ddd;
+$color-brand: #0384bf;
+$color-brand-hover: #3294c2;
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #000, #555);
+  color: $color;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p, a, button {
+  font-size: 1.3rem;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+button {
+  background-color: $color-brand;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  color: #000;
+  padding: 0.3rem 0.5rem;
+  transition: ease-in-out 150ms;
+
+  &:hover, &:focus {
+    background-color: $color-brand-hover;
+  }
+}
